@@ -7,7 +7,7 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails6 for more book information.
 #---
 # encoding: utf-8
-Product.delete_all
+Product1.delete_all
 Product.create!(title: 'Docker for Rails Developers',
   description:
     %{<p>
@@ -24,7 +24,7 @@ Product.create!(title: 'Docker for Rails Developers',
   image_url: 'ridocker.jpg',
   price: 38.00)
 # . . .
-Product.create!(title: 'Build Chatbot Interactions',
+Product1.create!(title: 'Build Chatbot Interactions',
   description:
     %{<p>
       <em>Responsive, Intuitive Interfaces with Ruby</em>
@@ -42,7 +42,7 @@ Product.create!(title: 'Build Chatbot Interactions',
   price: 20.00)
 # . . .
 
-Product.create!(title: 'Programming Crystal',
+Product1.create!(title: 'Programming Crystal',
   description:
     %{<p>
       <em>Create High-Performance, Safe, Concurrent Apps</em>
