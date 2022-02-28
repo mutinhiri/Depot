@@ -1,14 +1,46 @@
-<p style="color: green"><%= notice %></p>
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
 
-<h1>Product1s</h1>
+<h1>product1s</h1>
 
-<div id="product1s">
-  <% @product1s.each do |product1| %>
-    <%= render product1 %>
-    <p>
-      <%= link_to "Show this product1", product1 %>
-    </p>
-  <% end %>
-</div>
+<table>
+  <tfoot>
+    <tr>
+      <td colspan="3">
+        <%= link_to 'New product1', new_product1_path %>
+      </td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <% @product1s.each do |product1| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
-<%= link_to "New product1", new_product1_path %>
+        <td class="image">
+          <%= image_tag(product1.image_url, class: 'list_image') %>
+        </td>
+
+        <td class="description">
+          <h1><%= product1.title %></h1>
+          <p>
+            <%= truncate(strip_tags(product1.description),
+                         length: 80) %>
+          </p>
+        </td>
+
+        <td class="actions">
+          <ul>
+            <li><%= link_to 'Show', product1 %></li>
+            <li><%= link_to 'Edit', edit_product1_path(product1) %></li>
+            <li>
+              <%= link_to 'Destroy',
+                           product1, 
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' } %>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
